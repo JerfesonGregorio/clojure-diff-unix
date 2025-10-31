@@ -16,10 +16,10 @@
   (let [comando (str "diff -u <(nl " file1 ") <(nl " file2 ")")
         resultado (shell/sh "bash" "-c" comando)]
     (case (:exit resultado)
-      ;; Sucesso: Arquivos são idênticos
+      ;; Idênticos
       0 {:status :identical}
 
-      ;; Sucesso: Arquivos são diferentes
+      ;; Diferentes
       1 {:status :different
          :diff-output (:out resultado)}
 
@@ -147,7 +147,7 @@
 (def d-mapeado (parse-unified-diff d))
 (def saida (formatar-para-custom d-mapeado))
 
-(spit "diff-shell.txt" saida-final)
+(spit "resources/diff-replace.txt" saida)
 
 (defn -main
   [& args]
