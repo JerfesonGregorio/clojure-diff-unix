@@ -1,0 +1,7 @@
+linha 1: maçã
+linha 2: banana
+linha 2.5: kiwi
+linha 3: laranja
+linha 4: uva
+linha 5: morango
+      
